@@ -4,9 +4,7 @@ const root = document.getElementById("root");
 
 linkHome.onclick= function (event){
     event.preventDefault();
-    const homeScreen = HomeScreen();
-    root.innerHTML = "";
-    root.append(homeScreen);
+    root.textContent = "Welcome to Home";
     history.pushState(null, "", event.target.href);
 };
 
@@ -15,20 +13,6 @@ linkAbout.onclick= function (event){
     root.textContent = "Welcome to About";
     history.pushState(null, "", event.target.href);
 };
-
-function HomeScreen(){
-    const input = document.createElement("input");
-    input.placeholder = "Enter your name";
-
-    const textPreview = document.createElement("p");
-    textPreview.textContent = "Hello";
-
-    const div = document.createElement("div");
-    div.append(input);
-    div.append(textPreview);
-
-    return div;
-}
 
 if (location.hash == "#about") {
     root.textContent = "Welcome to About";
